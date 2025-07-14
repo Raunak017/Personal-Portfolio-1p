@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-black text-white;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent;
+  }
+
+  .accent-gradient {
+    @apply bg-gradient-to-r from-blue-500 to-purple-600;
+  }
+
+  .btn-primary {
+    @apply bg-white text-black hover:bg-gray-100 transition-all duration-300 font-medium rounded-full px-6 py-3 relative overflow-hidden;
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(147, 51, 234, 0.3);
+  }
+
+  .btn-secondary {
+    @apply bg-transparent text-white border border-gray-800 hover:border-blue-500 transition-all duration-300 font-medium rounded-full px-6 py-3;
+  }
+
+  .card {
+    @apply bg-black border border-gray-800 rounded-2xl p-6 transition-all duration-300 relative;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+  }
+
+  .card:hover {
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.15), 0 0 40px rgba(147, 51, 234, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .card-enhanced {
+    @apply bg-black/90 border border-gray-700 rounded-2xl p-6 transition-all duration-300 relative;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-enhanced:hover {
+    border-color: rgba(59, 130, 246, 0.8);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2), 0 0 40px rgba(147, 51, 234, 0.15);
+    transform: translateY(-4px);
+    background: rgba(0, 0, 0, 0.95);
+  }
+
+  .card-glow {
+    @apply relative;
+  }
+
+  .card-glow::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    padding: 1px;
+    background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.5), rgba(147, 51, 234, 0.5), transparent);
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+
+  .card-glow:hover::before {
+    opacity: 1;
+  }
+
+  .card-glow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: black;
+    border-radius: calc(1rem - 1px);
+    z-index: -1;
+  }
+
+  .spotlight {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), rgba(59, 130, 246, 0.1), transparent 40%);
+  }
+
+  .accent-text {
+    @apply text-blue-400;
+  }
+
+  .accent-border {
+    @apply border-blue-500;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
