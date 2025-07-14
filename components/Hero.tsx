@@ -130,7 +130,7 @@ export default function Hero() {
                 animate={{ opacity: [0.7, 1, 0.7] }}
                 transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
               >
-                Frontend Software Engineer
+                Software Engineer
               </motion.span>
               <br />
               <span className="text-lg text-gray-500">Crafting beautiful digital experiences with React & Next.js</span>

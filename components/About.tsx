@@ -39,14 +39,14 @@ export default function About() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-white">Passionate Frontend Engineer & Problem Solver</h3>
+            <h3 className="text-2xl font-bold mb-6 text-white">Passionate Software Engineer & Problem Solver</h3>
             <div className="space-y-4 text-gray-400 leading-relaxed">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Hey there! I'm Raunak, a Frontend Software Engineer with a passion for creating beautiful, functional,
+                Hey there! I'm Raunak, a Software Engineer with a passion for creating beautiful, functional,
                 and user-centric digital experiences. With a Master's in Computer Science from NYU and hands-on
                 experience at innovative companies like Building Diagnostics Robotics, I bring both academic rigor and
                 practical expertise to every project.
