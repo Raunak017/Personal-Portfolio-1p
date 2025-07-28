@@ -150,7 +150,6 @@ export default function Journey() {
                   <motion.div
                     animate={{
                       scale: hoveredEvent === index ? 1.4 : 1,
-                      backgroundColor: hoveredEvent === index ? "#ffffff" : "#ffffff",
                     }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="relative z-10 w-3 h-3 bg-white rounded-full border-2 border-black mb-2"
@@ -168,39 +167,48 @@ export default function Journey() {
                     <span className="text-xs font-bold text-white">{event.year}</span>
                   </motion.div>
 
-                  {/* Title Card */}
+                  {/* Card */}
                   <motion.div
                     animate={{
                       scale: hoveredEvent === index ? 1 : hoveredEvent !== null ? 0.85 : 1,
                       opacity: hoveredEvent !== null && hoveredEvent !== index ? 0.4 : 1,
-                      width: hoveredEvent === index ? "280px" : "110px",
+                      width: hoveredEvent === index ? "320px" : "112px",
+                      height: hoveredEvent === index ? "230px" : "80px",
                     }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
-                    className="card"
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="journey-card overflow-hidden relative"
                     style={{
-                      minHeight: "60px",
+                      borderColor: hoveredEvent === index ? "rgba(59, 130, 246, 0.8)" : "rgb(55, 65, 81)",
+                      boxShadow:
+                        hoveredEvent === index
+                          ? "0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(147, 51, 234, 0.2)"
+                          : "none",
                     }}
                   >
-                    <div className="text-center">
-                      <h3 className="text-xs font-semibold text-white leading-tight">{event.title}</h3>
-                    </div>
+                    {/* Static title - center when not hovered */}
+                    {hoveredEvent !== index && (
+                      <div className="absolute inset-0 flex items-center justify-center px-6">
+                        <h3 className="text-xs font-semibold text-white leading-tight text-center">{event.title}</h3>
+                      </div>
+                    )}
 
-                    {/* Expanded content on hover */}
-                    <motion.div
-                      initial={{ opacity: 0, height: 0, filter: "blur(4px)" }}
-                      animate={{
-                        opacity: hoveredEvent === index ? 1 : 0,
-                        height: hoveredEvent === index ? "auto" : 0,
-                        filter: hoveredEvent === index ? "blur(0px)" : "blur(4px)",
-                      }}
-                      transition={{ duration: 0.4, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <div className="mt-3 pt-3 border-t border-gray-800">
-                        <p className="text-xs text-gray-400 leading-relaxed text-left mb-3">{event.description}</p>
+                    {/* Expanded content - only visible on hover */}
+                    {hoveredEvent === index && (
+                      <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.3, delay: 0.2 }}
+                        className="absolute inset-0 p-6 flex flex-col justify-between"
+                      >
+                        {/* Title at top */}
+                        <div className="mb-4">
+                          <h3 className="text-sm font-bold text-white mb-3 text-center">{event.title}</h3>
+                          <p className="text-xs text-gray-400 leading-relaxed border-t border-gray-800 pt-3">{event.description}</p>
+                        </div>
 
-                        <div className="flex items-center justify-between">
-                          <span className="px-2 py-0.5 rounded-full text-xs font-medium bg-gray-800 text-gray-400">
+                        {/* Bottom section with type and button */}
+                        <div className="flex items-center justify-between mt-auto">
+                          <span className="px-3 py-1 rounded-full text-xs font-medium bg-gray-800 text-gray-400 border border-gray-700">
                             {event.type.charAt(0).toUpperCase() + event.type.slice(1)}
                           </span>
 
@@ -208,14 +216,14 @@ export default function Journey() {
                             onClick={() => scrollToSection(event.linkTo)}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="flex items-center gap-1 text-xs text-white hover:text-gray-300 font-medium transition-colors"
+                            className="flex items-center gap-1 text-xs text-white hover:text-blue-400 font-medium transition-colors"
                           >
                             Learn More
                             <ArrowRight className="w-3 h-3" />
                           </motion.button>
                         </div>
-                      </div>
-                    </motion.div>
+                      </motion.div>
+                    )}
                   </motion.div>
                 </div>
               </AnimatedContent>

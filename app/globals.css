@@ -57,6 +57,13 @@
     background: rgba(0, 0, 0, 0.95);
   }
 
+  .journey-card {
+    @apply bg-black border border-gray-800 rounded-2xl p-6 relative;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    
+  }
+
   .card-glow {
     @apply relative;
   }
