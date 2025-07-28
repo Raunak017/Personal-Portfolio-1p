@@ -6,9 +6,9 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Raunak Shukla - Frontend Software Engineer",
+  title: "Raunak Shukla - Software Engineer",
   description:
-    "Portfolio of Raunak Shukla, a passionate Frontend Software Engineer specializing in React, Next.js, and modern web technologies.",
+    "Portfolio of Raunak Shukla, a passionateSoftware Engineer specializing in React, Next.js, and modern web technologies.",
   keywords: "Frontend Developer, Software Engineer, React, Next.js, JavaScript, TypeScript, Portfolio",
   authors: [{ name: "Raunak Shukla" }],
   openGraph: {
