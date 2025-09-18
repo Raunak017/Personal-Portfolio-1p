@@ -7,12 +7,12 @@ import { BookOpen, ExternalLink, Github, Users, Calendar } from "lucide-react"
 
 const research = [
   {
-    title: "Sentiment Analysis Using Voting Classification and Neural Networks",
+    title: "Comparing Machine Learning Classification Algorithms and Feed Forward Neural Network to Perform Sentiment Analysis",
     authors: "Co-Author",
     publication: "Springer Conference - 6th ICSCSP 2023",
     year: "2023",
     doi: "https://doi.org/10.1007/978-981-99-8628-6_28",
-    github: "https://github.com/placeholder",
+    github: "https://github.com/Raunak017/SentimentAnalysis-ResearchPaper",
     description:
       "Achieved an accuracy of 80% using a voting classifier and a feedforward neural network leveraging PyTorch to perform sentiment analysis on a dataset of 140k values.",
     technologies: ["PyTorch", "Machine Learning", "Neural Networks", "Python"],
@@ -23,18 +23,18 @@ const research = [
     publication: "Preprinted at Research Square",
     year: "2023",
     doi: "https://doi.org/10.21203/rs.3.rs-2948055/v1",
-    github: "https://github.com/placeholder",
+    github: "https://github.com/Raunak017/Capstone-Project",
     description:
       "Generated artificial data using the TimeGAN model for 3 years and used this data for training neural networks. Trained RNN, LSTM & GRU neural networks & made predictions with MAE of 1.64 & MAPE as low as 1.53%",
     technologies: ["GAN", "TimeGAN", "RNN", "LSTM", "GRU", "Python"],
   },
   {
-    title: "Total Revenue Prediction of Grook Using Machine Learning Models",
+    title: "Total Revenue Prediction of A Sports Management Application: Grook Using Machine Learning Models",
     authors: "First Author",
     publication: "IEEE Conference - 13th ICCCNT 2022",
     year: "2022",
     doi: "https://ieeexplore.ieee.org/document/9984472",
-    github: "https://github.com/placeholder",
+    github: "https://github.com/Raunak017/Grook-RegressionAnalysis",
     description:
       "Built an application for online booking of sports facilities using Java and used ML to predict revenue generated. Assembled a voting regressor and got best R² score of 0.979 and RMSE of 82 using polynomial features of degree 2.",
     technologies: ["Java", "Machine Learning", "Voting Regressor", "Polynomial Features"],
@@ -56,7 +56,7 @@ export default function Research() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Research Publications</h2>
-          <div className="w-24 h-1 bg-white mx-auto mb-8" />
+          <div className="w-24 h-1 accent-gradient mx-auto mb-8" />
           <p className="text-gray-400 max-w-2xl mx-auto">
             Published research work in machine learning, neural networks, and data analysis with contributions to
             academic conferences and journals.
@@ -76,8 +76,8 @@ export default function Research() {
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                   <div className="flex-1">
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="p-3 bg-white rounded-lg flex-shrink-0">
-                        <BookOpen className="w-6 h-6 text-black" />
+                      <div className="p-3 accent-gradient rounded-lg flex-shrink-0">
+                        <BookOpen className="w-6 h-6 text-white" />
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-bold text-white mb-2 leading-tight">{paper.title}</h3>

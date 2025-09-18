@@ -11,34 +11,33 @@ const journeyEvents = [
     year: "2019",
     title: "Started CS Undergrad",
     description:
-      "Began my journey in Computer Science at Vellore Institute of Technology, diving into programming fundamentals and discovering my passion for software development.",
+      "Began my Computer Science degree at VIT, exploring programming fundamentals and developing a strong interest in building scalable software systems.",
     icon: GraduationCap,
     type: "education",
     linkTo: "education",
   },
   {
     year: "2021",
-    title: "First App Published",
+    title: "Software Dev at YTBC",
     description:
-      "Published my first mobile application on Google Play Store, marking my entry into app development and gaining real-world experience with user feedback.",
-    icon: Smartphone,
+      "Worked as Software Developer at Young Tycoons Business Challenge, building reusable components and backend APIs to support 20,000+ users on a production web platform.",
     type: "achievement",
-    linkTo: "projects",
+    linkTo: "experience",
   },
   {
     year: "2022",
-    title: "First Research Paper",
+    title: "ML Intern at Feynn Labs",
     description:
-      "Published my first research paper in IEEE Conference on machine learning applications, exploring revenue prediction models with 97.9% accuracy.",
+      "Interned as a Machine Learning Intern at Feynn Labs, applying clustering models and data visualization to improve market segmentation and business analytics.",
     icon: BookOpen,
     type: "research",
-    linkTo: "research",
+    linkTo: "experience",
   },
   {
     year: "2023",
     title: "Started Masters at NYU",
     description:
-      "Began MS in Computer Science at NYU Tandon School of Engineering, focusing on advanced algorithms, software engineering, and big data technologies.",
+      "Enrolled in MS Computer Science at NYU Tandon, focusing on advanced algorithms, software engineering, big data, and machine learning.",
     icon: GraduationCap,
     type: "education",
     linkTo: "education",
@@ -47,7 +46,7 @@ const journeyEvents = [
     year: "2024",
     title: "CS Grader at NYU",
     description:
-      "Started working as a grader for Introduction to Computer Science course at NYU Courant, evaluating Java assignments and providing 1:1 feedback to students.",
+      "Served as grader for Intro to CS at NYU Courant, reviewing Java assignments and providing detailed 1:1 feedback to help students strengthen fundamentals.",
     icon: Briefcase,
     type: "work",
     linkTo: "experience",
@@ -56,7 +55,7 @@ const journeyEvents = [
     year: "2024",
     title: "Bootcamp Admin",
     description:
-      "Joined NYU Tandon Career Hub as Bootcamp Admin, managing LeetCode and Data Science bootcamps for 500+ participants with 20% retention improvement.",
+      "Managed LeetCode and Data Science bootcamps at NYU Tandon Career Hub, coordinating 500+ participants and improving retention by 20% through automation.",
     icon: Briefcase,
     type: "work",
     linkTo: "experience",
@@ -65,7 +64,7 @@ const journeyEvents = [
     year: "2025",
     title: "Started at BDR",
     description:
-      "Began internship at Building Diagnostics Robotics, working on web and mobile apps with Next.js, React Native, and AWS serverless architecture.",
+      "Joined Building Diagnostics Robotics as Software Engineer Intern, developing cross-platform apps and scalable web features with Next.js, React Native, and AWS.",
     icon: Briefcase,
     type: "work",
     linkTo: "experience",
@@ -74,7 +73,7 @@ const journeyEvents = [
     year: "2025",
     title: "Graduated NYU",
     description:
-      "Successfully completed Master of Science in Computer Science with 3.7 GPA, specializing in software engineering and distributed systems.",
+      "Completed Master’s in Computer Science at NYU with 3.73 GPA, gaining expertise in distributed systems, AI, and full‑stack development.",
     icon: Trophy,
     type: "education",
     linkTo: "education",
@@ -83,7 +82,7 @@ const journeyEvents = [
     year: "2025",
     title: "SWE at BDR",
     description:
-      "Promoted to Jr. Software Engineer at Building Diagnostics Robotics. Revamped website architecture with Next.js, launched new service verticals, and deployed iOS app with CI/CD pipeline.",
+      "Promoted to Software Engineer at BDR, revamping website architecture with Next.js, deploying iOS app via CI/CD, and launching new service verticals.",
     icon: Briefcase,
     type: "work",
     linkTo: "experience",
@@ -145,6 +144,11 @@ export default function Journey() {
                   className="relative flex flex-col items-center cursor-pointer"
                   onMouseEnter={() => setHoveredEvent(index)}
                   onMouseLeave={() => setHoveredEvent(null)}
+                  onClick={() => scrollToSection(event.linkTo)}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`Go to ${event.linkTo} section`}
+                  onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollToSection(event.linkTo); } }}
                 >
                   {/* Timeline dot */}
                   <motion.div

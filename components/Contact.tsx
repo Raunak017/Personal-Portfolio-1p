@@ -21,16 +21,24 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+      if (!res.ok) throw new Error("Failed to send message")
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    setFormData({ name: "", email: "", message: "" })
-
-    // Reset success message after 3 seconds
-    setTimeout(() => setIsSubmitted(false), 3000)
+      setIsSubmitted(true)
+      setFormData({ name: "", email: "", message: "" })
+      setTimeout(() => setIsSubmitted(false), 3000)
+    } catch (err) {
+      console.error(err)
+      alert("Sorry, something went wrong. Please try again later.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -85,7 +93,7 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Get In Touch</h2>
-          <div className="w-24 h-1 bg-white mx-auto mb-8" />
+          <div className="w-24 h-1 accent-gradient mx-auto mb-8" />
           <p className="text-gray-400 max-w-2xl mx-auto">
             I'm always open to discussing new opportunities, interesting projects, or just having a chat about
             technology. Let's connect!
@@ -103,9 +111,7 @@ export default function Contact() {
             <div>
               <h3 className="text-2xl font-bold mb-6 text-white">Let's Connect</h3>
               <p className="text-gray-400 leading-relaxed mb-8">
-                Whether you're looking to collaborate on a project, need a frontend developer for your team, or just
-                want to say hello, I'd love to hear from you. I'm currently open to new opportunities and exciting
-                challenges.
+                Whether you're looking to collaborate on a project, need a software or AI engineer for your team, or just want to chat about technology, I'd love to hear from you. I'm open to exciting opportunities and new challenges.
               </p>
             </div>
 
@@ -121,8 +127,8 @@ export default function Contact() {
                   whileHover={{ scale: 1.02, x: 5 }}
                   className="card flex items-center gap-4"
                 >
-                  <div className="p-3 bg-white rounded-lg">
-                    <info.icon className="w-5 h-5 text-black" />
+                  <div className="p-3 accent-gradient rounded-lg">
+                    <info.icon className="w-5 h-5 text-white" />
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">{info.label}</p>
@@ -187,8 +193,8 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent text-white placeholder-gray-500 transition-all"
-                    placeholder="Your name"
+                    className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg focus:ring-0 focus:border-white focus:outline-none text-white placeholder-gray-500 transition-all"
+                    placeholder="Jane Doe"
                   />
                 </div>
 
@@ -203,7 +209,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent text-white placeholder-gray-500 transition-all"
+                    className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg focus:ring-0 focus:border-white focus:outline-none text-white placeholder-gray-500 transition-all"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -219,8 +225,8 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent text-white placeholder-gray-500 transition-all resize-none"
-                    placeholder="Tell me about your project or just say hello..."
+                    className="w-full px-4 py-3 bg-black border border-gray-800 rounded-lg focus:ring-0 focus:border-white focus:outline-none text-white placeholder-gray-500 transition-all resize-all"
+                    placeholder="Tell me the reason you're contacting, tell me about yourself, or just say hello."
                   />
                 </div>
 

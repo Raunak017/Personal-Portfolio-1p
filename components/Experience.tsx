@@ -7,36 +7,34 @@ import { Briefcase, Calendar, MapPin } from "lucide-react"
 
 const experiences = [
   {
-    title: "Jr. Software Engineer",
+    title: "Software Engineer",
     company: "Building Diagnostics Robotics",
-    location: "Remote",
+    location: "Brooklyn, NY",
     period: "June 2025 - Present",
     type: "Full-time",
     description: [
-      "Revamped BDR's website architecture with modular Next.js components, implemented mobile-first design improvements including dynamic navigation behavior and exit-intent modals",
-      "Launched new service verticals and blog-driven content using MDX and static generation strategies",
-      "Deployed the iOS version of BDR's mobile app to the App Store; set up a CI/CD pipeline using AWS to streamline release workflows and reduce deployment cycles by 15%",
+      "Developed a ML pipeline for automated curve fitting and model evaluation across CSV datasets using Chebyshev, spline, ridge, and piecewise regression; implemented train/test RMSE analysis to optimize generalization and visualize performance, achieving an average R2 score of 0.98.",
+      "Revamped BDR’s website architecture with modular Next.js components, implemented mobile-first design improvements including dynamic navigation behavior and exit-intent modals, and launched new service verticals and blog-driven content using MDX and static generation strategies, enhancing user engagement and content accessibility.",
     ],
-    technologies: ["Next.js", "React", "AWS", "CI/CD", "MDX", "iOS"],
+    technologies: ["Next.js", "React", "Redux", "AWS", "CI/CD", "MDX", "Machine Learning", "Regression Models"],
   },
   {
     title: "Software Engineer Intern",
     company: "Building Diagnostics Robotics",
-    location: "Remote",
+    location: "Brooklyn, NY",
     period: "March 2025 - June 2025",
     type: "Internship",
     description: [
-      "Built interactive, scalable pages for BDR's website using Next.js, Tailwind CSS; implemented dynamic routing, reusable components, custom hooks to manage UI state & dynamic user interactions",
-      "Spearheaded a scalable cross-platform app (iOS & Android) using React Native and Flask",
-      "Designed a serverless backend with AWS Lambda, GraphQL, Cognito, and API Gateway to support 1000+ users",
+      "Spearheaded a scalable cross-platform app (iOS & Android) using React Native and Flask; designed a serverless backend with AWS Lambda, GraphQL, Cognito, and API Gateway to support 1000+ users.",
+      "Deployed the iOS version of BDR’s mobile app to the App Store; set up a CI/CD pipeline using AWS to streamline release workflows and reduce deployment cycles by 15%.",
     ],
-    technologies: ["Next.js", "React Native", "Flask", "AWS Lambda", "GraphQL", "Tailwind CSS"],
+    technologies: ["React Native", "Flask", "Next.js", "AWS Lambda", "GraphQL", "Cognito", "API Gateway", "CI/CD", "iOS", "Android"],
   },
   {
     title: "Bootcamp Admin",
     company: "NYU Tandon Career Hub",
     location: "Brooklyn, NY",
-    period: "Sept 2024 - Present",
+    period: "Sept 2024 - May 2025",
     type: "Part-time",
     description: [
       "Oversaw LeetCode and Data Science bootcamps with ~500 participants across two semesters",
@@ -134,7 +132,7 @@ export default function Experience() {
             >
               <div className="card-enhanced">
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex-shrink-0">
+                  <div className="p-3 accent-gradient rounded-lg flex-shrink-0">
                     <Briefcase className="w-5 h-5 text-white" />
                   </div>
                   <div className="flex-1">

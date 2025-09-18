@@ -13,10 +13,10 @@ const projects = [
   {
     title: "Personal Portfolio Website",
     description:
-      "A modern, animated portfolio website built with Next.js and Framer Motion, featuring scroll-based animations, true black theme, and responsive design inspired by Cursor.com.",
+      "A modern, animated portfolio built with Next.js and Framer Motion with smooth scroll/entrance effects, a true‑black theme, and a responsive layout.",
     technologies: ["Next.js", "React", "Framer Motion", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/Raunak017/portfolio",
-    demo: "https://raunakshukla.netlify.app",
+    github: "https://github.com/Raunak017/Personal-Portfolio-1p",
+    demo: "https://raunak17.dev/",
     featured: true,
     highlights: [
       "Scroll-triggered animations with Framer Motion",
@@ -26,14 +26,15 @@ const projects = [
       "SEO optimized with OpenGraph meta tags",
       "Deployed on Netlify with CI/CD pipeline",
     ],
+    categories: ["Software Engineering"],
   },
   {
     title: "Reinforcement Learning for Complex Game Environments",
     description:
       "Trained RL agents for CartPolev2, CarRacingv2, 3D Humanoid etc. using PPO, A2C, & DQN achieving multi-level task completion through stable and scalable training pipelines with Stable Baselines.",
-    technologies: ["Python", "Stable Baselines", "PPO", "A2C", "DQN", "CNN", "ResNet"],
-    github: "https://github.com/placeholder",
-    demo: "https://placeholder.com",
+    technologies: ["Stable Baselines", "PPO", "A2C", "DQN", "CNN", "ResNet"],
+    github: "https://github.com/Raunak017/Crypto-Tracker",
+    demo: "",
     featured: false,
     highlights: [
       "Multi-environment RL training pipeline",
@@ -41,14 +42,15 @@ const projects = [
       "Policy optimization for reinforcement tasks",
       "Stable and scalable training implementation",
     ],
+    categories: ["ML/Data Science"],
   },
   {
     title: "Analyzing Historical Temperature Anomalies",
     description:
       "Conducted time-series analysis on the GISTEMP v4 dataset, implemented STL ARIMA and SARIMAX models, and developed a tuned RNN to project future temperature anomalies with a 6% error and an AIC of -183.",
-    technologies: ["Python", "Time Series Analysis", "ARIMA", "SARIMAX", "RNN", "GISTEMP"],
-    github: "https://github.com/placeholder",
-    demo: "https://placeholder.com",
+    technologies: ["Time Series Analysis", "ARIMA", "SARIMAX", "RNN", "GISTEMP"],
+    github: "https://github.com/Raunak017/Analyzing-Historical-Temperature-Anomalies",
+    demo: "",
     featured: false,
     highlights: [
       "Time-series analysis on GISTEMP v4 dataset",
@@ -56,14 +58,15 @@ const projects = [
       "Tuned RNN for temperature projection",
       "Achieved 6% error rate with AIC of -183",
     ],
+    categories: ["ML/Data Science"],
   },
   {
     title: "AI Resume Builder",
     description:
       "A web app that parses PDF resumes and uses OpenAI API to generate or rewrite bullet points based on user-provided prompts or keywords.",
     technologies: ["Next.js", "Supabase", "OpenAI API", "Vercel", "PDF Parser"],
-    github: "https://github.com/placeholder",
-    demo: "https://placeholder.com",
+    github: "https://github.com/Raunak017/AI-Resume-Builder",
+    demo: "",
     featured: false,
     highlights: [
       "PDF parsing and text extraction",
@@ -71,14 +74,15 @@ const projects = [
       "Real-time collaboration features",
       "Supabase authentication and storage",
     ],
+    categories: ["Software Engineering", "AI"],
   },
   {
     title: "Crypto Tracker",
     description:
       "Real-time cryptocurrency tracking app with price alerts, portfolio management, and interactive charts for 10,000+ digital assets.",
     technologies: ["React.js", "Node.js", "Express", "Firebase", "CoinGecko API"],
-    github: "https://github.com/placeholder",
-    demo: "https://placeholder.com",
+    github: "https://github.com/Raunak017/Crypto-Tracker",
+    demo: "",
     featured: false,
     highlights: [
       "Real-time price tracking",
@@ -86,14 +90,15 @@ const projects = [
       "Portfolio management system",
       "Price alerts and notifications",
     ],
+    categories: ["Software Engineering"],
   },
   {
     title: "NYC Crime Data Analysis",
     description:
       "Big data pipeline using Spark to analyze 218k+ NYC crime records with GCP, Airbyte, and Snowflake visualization.",
     technologies: ["PySpark", "GCP", "Airbyte", "Snowflake", "Python"],
-    github: "https://github.com/placeholder",
-    demo: "https://placeholder.com",
+    github: "https://github.com/arsalananwar11/Safeguarding-NYC-Analyzing-Crime-Patterns-using-Big-Data",
+    demo: "",
     featured: false,
     highlights: [
       "ELT pipeline with Medallion Architecture",
@@ -101,14 +106,15 @@ const projects = [
       "Interactive data visualizations",
       "Cloud-native architecture",
     ],
+    categories: ["ML/Data Science"],
   },
   {
     title: "IntelliQuest Search Engine",
     description:
       "Academic paper search engine with advanced search options, related papers, and comprehensive database integration.",
     technologies: ["React.js", "Django", "PostgreSQL", "Docker", "DigitalOcean"],
-    github: "https://github.com/placeholder",
-    demo: "https://placeholder.com",
+    github: "https://github.com/ShaktidharK1997/IntelliQuest",
+    demo: "",
     featured: false,
     highlights: [
       "Advanced search algorithms",
@@ -116,6 +122,7 @@ const projects = [
       "RESTful API architecture",
       "Containerized deployment",
     ],
+    categories: ["Software Engineering"],
   },
 ]
 
@@ -123,6 +130,7 @@ export default function Projects({ mousePosition }: ProjectsProps) {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [hoveredProject, setHoveredProject] = useState<number | null>(null)
+  const [filter, setFilter] = useState<"Essentials" | "Software Engineering" | "AI" | "ML/Data Science">("Essentials")
 
   return (
     <section id="projects" className="py-20 bg-black">
@@ -134,163 +142,193 @@ export default function Projects({ mousePosition }: ProjectsProps) {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Featured Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Projects</h2>
           <div className="w-24 h-1 accent-gradient mx-auto mb-8" />
           <p className="text-gray-400 max-w-2xl mx-auto">
-            A collection of projects that showcase my skills in frontend development, full-stack applications, machine
-            learning, and data engineering.
+            A curated set of projects spanning software engineering, AI, machine learning, and data engineering.
           </p>
         </motion.div>
 
-        <div className="grid gap-8">
-          {/* Featured Project */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
-          >
-            {projects
-              .filter((project) => project.featured)
-              .map((project, index) => (
-                <div
-                  key={index}
-                  className="card-enhanced relative overflow-hidden"
-                  onMouseEnter={() => setHoveredProject(index)}
-                  onMouseLeave={() => setHoveredProject(null)}
-                >
-                  {/* Featured badge */}
-                  <div className="absolute top-6 right-6 flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full text-sm font-bold z-10">
-                    <Star className="w-4 h-4" />
-                    Featured
-                  </div>
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+          {(["Essentials", "Software Engineering", "AI", "ML/Data Science"] as const).map((label) => (
+            <motion.button
+              key={label}
+              onClick={() => setFilter(label)}
+              aria-pressed={filter === label}
+              className={`relative overflow-hidden px-4 py-2 rounded-full border text-sm transition-colors ${
+                filter === label
+                  ? "bg-blue-600/20 border-blue-500 text-white"
+                  : "bg-transparent border-gray-700 text-gray-400 hover:border-blue-500 hover:text-blue-400"
+              }`}
+            >
+              {filter === label && (
+                <motion.span
+                  className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent"
+                  animate={{ x: ["-100%", "100%"] }}
+                  transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                />
+              )}
+              <span className="relative z-10">{label}</span>
+            </motion.button>
+          ))
+          }
+        </div>
 
-                  <div className="relative">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex-shrink-0">
-                        <Zap className="w-6 h-6 text-white" />
-                      </div>
-                      <h3 className="text-2xl font-bold text-white">{project.title}</h3>
-                    </div>
-
-                    <p className="text-gray-400 mb-6 leading-relaxed">{project.description}</p>
-
-                    <div className="mb-6">
-                      <h4 className="text-sm font-semibold accent-text mb-3 uppercase tracking-wide">Key Features</h4>
-                      <ul className="grid md:grid-cols-2 gap-2">
-                        {project.highlights.map((highlight, highlightIndex) => (
-                          <li key={highlightIndex} className="text-gray-400 text-sm flex items-start gap-2">
-                            <span className="accent-text mt-1 flex-shrink-0">•</span>
-                            <span>{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.technologies.map((tech, techIndex) => (
-                        <span
-                          key={techIndex}
-                          className="px-3 py-1 bg-gray-900/50 border border-gray-700 text-gray-400 rounded-full text-sm hover:border-blue-500 hover:text-blue-400 transition-colors"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="flex gap-4">
-                      <motion.a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="btn-secondary flex items-center gap-2"
-                      >
-                        <Github className="w-4 h-4" />
-                        Code
-                      </motion.a>
-                      <motion.a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="btn-primary flex items-center gap-2"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Live Demo
-                      </motion.a>
-                    </div>
-                  </div>
-                </div>
-              ))}
-          </motion.div>
-
-          {/* Other Projects Grid */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {projects
-              .filter((project) => !project.featured)
-              .map((project, index) => (
+        {(() => {
+          const visibleProjects = projects.filter((p) => filter === "Essentials" || p.categories?.includes(filter))
+          return (
+            <>
+              <div className="grid gap-8">
+                {/* Featured Project */}
                 <motion.div
-                  key={index}
                   initial={{ opacity: 0, y: 50 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
-                  className="group"
-                  onMouseEnter={() => setHoveredProject(index + 1)}
-                  onMouseLeave={() => setHoveredProject(null)}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="relative"
                 >
-                  <div className="card-enhanced h-full">
-                    <div className="relative">
-                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
-                        {project.title}
-                      </h3>
+                  {visibleProjects
+                    .filter((project) => project.featured)
+                    .map((project, index) => (
+                      <div
+                        key={index}
+                        className="card-enhanced relative overflow-hidden"
+                        onMouseEnter={() => setHoveredProject(index)}
+                        onMouseLeave={() => setHoveredProject(null)}
+                      >
+                        {/* Featured badge */}
+                        <div className="absolute top-6 right-6 flex items-center gap-2 px-3 py-1 accent-gradient text-white rounded-full text-sm font-bold z-10">
+                          <Star className="w-4 h-4" />
+                          Featured
+                        </div>
 
-                      <p className="text-gray-400 text-sm mb-4 leading-relaxed">{project.description}</p>
+                        <div className="relative">
+                          <div className="flex items-center gap-3 mb-6">
+                            <div className="p-3 accent-gradient rounded-lg flex-shrink-0">
+                              <Zap className="w-6 h-6 text-white" />
+                            </div>
+                            <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+                          </div>
 
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                          <span
-                            key={techIndex}
-                            className="px-2 py-1 bg-gray-900/50 border border-gray-700 text-gray-400 rounded text-xs hover:border-blue-500 hover:text-blue-400 transition-colors"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                        {project.technologies.length > 3 && (
-                          <span className="px-2 py-1 bg-gray-900/50 border border-gray-700 text-gray-400 rounded text-xs">
-                            +{project.technologies.length - 3} more
-                          </span>
-                        )}
+                          <p className="text-gray-400 mb-6 leading-relaxed">{project.description}</p>
+
+                          <div className="mb-6">
+                            <h4 className="text-sm font-semibold accent-text mb-3 uppercase tracking-wide">Key Features</h4>
+                            <ul className="grid md:grid-cols-2 gap-2">
+                              {project.highlights.map((highlight, highlightIndex) => (
+                                <li key={highlightIndex} className="text-gray-400 text-sm flex items-start gap-2">
+                                  <span className="accent-text mt-1 flex-shrink-0">•</span>
+                                  <span>{highlight}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+
+                          <div className="flex flex-wrap gap-2 mb-6">
+                            {project.technologies.map((tech, techIndex) => (
+                              <span
+                                key={techIndex}
+                                className="px-3 py-1 bg-gray-900/50 border border-gray-700 text-gray-400 rounded-full text-sm hover:border-blue-500 hover:text-blue-400 transition-colors"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+
+                          <div className="flex gap-4">
+                            <motion.a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                              className="btn-secondary flex items-center gap-2"
+                            >
+                              <Github className="w-4 h-4" />
+                              Code
+                            </motion.a>
+                            {project.demo && (
+                              <motion.a
+                                href={project.demo}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="btn-primary flex items-center gap-2"
+                              >
+                                <ExternalLink className="w-4 h-4" />
+                                Live Demo
+                              </motion.a>
+                            )}
+                          </div>
+                        </div>
                       </div>
-
-                      <div className="flex gap-3 mt-auto">
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-gray-400 hover:text-blue-400 transition-colors text-sm"
-                        >
-                          <Github className="w-4 h-4" />
-                          Code
-                        </a>
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-gray-400 hover:text-blue-400 transition-colors text-sm"
-                        >
-                          <ExternalLink className="w-4 h-4" />
-                          Demo
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                    ))}
                 </motion.div>
-              ))}
-          </div>
-        </div>
+
+                {/* Other Projects Grid */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  {visibleProjects
+                    .filter((project) => !project.featured)
+                    .map((project, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
+                        className="group"
+                        onMouseEnter={() => setHoveredProject(index + 1)}
+                        onMouseLeave={() => setHoveredProject(null)}
+                      >
+                        <div className="card-enhanced h-full">
+                          <div className="relative">
+                            <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                              {project.title}
+                            </h3>
+
+                            <p className="text-gray-400 text-sm mb-4 leading-relaxed">{project.description}</p>
+
+                            <div className="flex flex-wrap gap-2 mb-4">
+                              {project.technologies.map((tech, techIndex) => (
+                                <span
+                                  key={techIndex}
+                                  className="px-2 py-1 bg-gray-900/50 border border-gray-700 text-gray-400 rounded text-xs hover:border-blue-500 hover:text-blue-400 transition-colors"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+
+                            <div className="flex gap-3 mt-auto">
+                              <a
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-1 text-gray-400 hover:text-blue-400 transition-colors text-sm"
+                              >
+                                <Github className="w-4 h-4" />
+                                Code
+                              </a>
+                              {project.demo && (
+                                <a
+                                  href={project.demo}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="flex items-center gap-1 text-gray-400 hover:text-blue-400 transition-colors text-sm"
+                                >
+                                  <ExternalLink className="w-4 h-4" />
+                                  Demo
+                                </a>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    ))}
+                </div>
+              </div>
+            </>
+          )
+        })()}
       </div>
     </section>
   )
