@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
+import Image from "next/image"
 
 export default function About() {
   const ref = useRef(null)
@@ -39,35 +40,28 @@ export default function About() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-white">Passionate Software Engineer & Problem Solver</h3>
+            <h3 className="text-2xl font-bold mb-6 text-white">Software & AI Engineer</h3>
             <div className="space-y-4 text-gray-400 leading-relaxed">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Hey there! I'm Raunak, a Software Engineer with a passion for creating beautiful, functional,
-                and user-centric digital experiences. With a Master's in Computer Science from NYU and hands-on
-                experience at innovative companies like Building Diagnostics Robotics, I bring both academic rigor and
-                practical expertise to every project.
+                Hey there! I'm Raunak — a Software & AI Engineer with an MS in Computer Science from NYU. I build products end‑to‑end and ship fast. Recently at Building Diagnostics Robotics, I designed a production ML pipeline for automated curve‑fitting and model evaluation and helped revamp their web stack with modular Next.js components and mobile‑first UX.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                My journey spans full-stack development, machine learning research, and mobile app development. I love
-                the intersection of design and technology, where clean code meets intuitive user interfaces. When I'm
-                not coding, you'll find me exploring the latest web technologies, contributing to open-source projects,
-                or diving deep into research papers.
+                My work spans full‑stack (React/Next.js, Node.js, Django), mobile (React Native), and cloud (AWS/GCP, CI/CD) as well as applied ML/GenAI (TensorFlow, PyTorch, LLMs, fine‑tuning). I’ve built things like IntelliQuest (paper search engine), an AI Resume Builder using OpenAI, and big‑data pipelines on Spark and Snowflake.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                I believe in writing code that not only works but tells a story—clean, maintainable, and scalable
-                solutions that make a real impact.
+                Previously, I’ve delivered real‑time chat interfaces at Radical AI and supported 500+ learners at NYU’s Career Hub bootcamps. I care about clean, maintainable code and building scalable systems that make a real impact.
               </motion.p>
             </div>
           </motion.div>
@@ -114,10 +108,16 @@ export default function About() {
                     ],
                   }}
                   transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
-                  className="absolute inset-0"
+                  className="absolute inset-0 z-0"
                 />
 
-                <span className="text-gray-500 relative z-10">Your Photo Here</span>
+                <Image
+                  src="/images/raunak-about.jpeg"
+                  alt="Raunak Shukla"
+                  fill
+                  className="object-cover z-10 opacity-50"
+                  priority
+                />
               </motion.div>
 
               {/* Floating particles around photo */}
@@ -149,7 +149,7 @@ export default function About() {
                   scale: [1, 1.2, 1],
                 }}
                 transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
-                className="absolute -top-2 -left-2 w-6 h-6 border-l-2 border-t-2 border-blue-500/40"
+                className="absolute -top-2 -left-2 w-6 h-6 border-l-2 border-t-2 border-blue-500/40 z-0"
               />
               <motion.div
                 animate={{
@@ -157,7 +157,7 @@ export default function About() {
                   scale: [1.2, 1, 1.2],
                 }}
                 transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
-                className="absolute -bottom-2 -right-2 w-6 h-6 border-r-2 border-b-2 border-purple-500/40"
+                className="absolute -bottom-2 -right-2 w-6 h-6 border-r-2 border-b-2 border-purple-500/40 z-0"
               />
             </div>
           </motion.div>

@@ -9,21 +9,21 @@ export const metadata: Metadata = {
   title: "Raunak Shukla - Software Engineer",
   description:
     "Portfolio of Raunak Shukla, a passionateSoftware Engineer specializing in React, Next.js, and modern web technologies.",
-  keywords: "Frontend Developer, Software Engineer, React, Next.js, JavaScript, TypeScript, Portfolio",
+  keywords: "Software Engineer, AI Engineer, React, Next.js, Python, AI Agents, Portfolio",
   authors: [{ name: "Raunak Shukla" }],
   openGraph: {
-    title: "Raunak Shukla - Frontend Software Engineer",
-    description: "Portfolio showcasing my journey as a Frontend Software Engineer",
-    url: "https://raunakshukla.netlify.app",
+    title: "Raunak Shukla - Software Engineer",
+    description: "Portfolio showcasing my journey as a Software Engineer",
+    url: "https://raunak17.dev",
     siteName: "Raunak Shukla Portfolio",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Raunak Shukla - Frontend Software Engineer",
+    title: "Raunak Shukla - Software Engineer",
     description: "Portfolio showcasing my journey as a Frontend Software Engineer",
   },
-    generator: 'v0.dev'
+    
 }
 
 export default function RootLayout({
