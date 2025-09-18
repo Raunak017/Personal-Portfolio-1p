@@ -115,7 +115,7 @@ export default function About() {
                   src="/images/raunak-about.jpeg"
                   alt="Raunak Shukla"
                   fill
-                  className="object-cover z-10 opacity-50"
+                  className="object-cover z-10"
                   priority
                 />
               </motion.div>

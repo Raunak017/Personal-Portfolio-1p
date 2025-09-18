@@ -1,30 +1,99 @@
-# Personal Portfolio
+# Raunak’s Portfolio
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+A fast, responsive personal portfolio built with **Next.js**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**. It showcases projects, an animated hero, an “About Me” with dynamic visuals, and a downloadable resume. The project is live at https://raunak17.dev
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/raunakshukla9811-8247s-projects/v0-personal-portfolio)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/UCgk1ZucHqm)
+## 🚀 Features
+- Animated hero with rotating title: **Software / AI Engineer**
+- Clean, responsive UI with Tailwind
+- Smooth entrance/scroll animations (Framer Motion)
+- About section with photo frame and subtle motion effects
+- “Download Resume” button (opens PDF in a new tab)
+- SEO-friendly (Next.js App Router)
 
-## Overview
+## 🧰 Tech Stack
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript, React
+- **Styling:** Tailwind CSS
+- **Animation:** Framer Motion
+- **Icons:** lucide-react
+- **Images:** next/image
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## ▶️ Getting Started
 
-## Deployment
+```bash
+# 1) Install deps
+npm install
 
-Your project is live at:
+# 2) Run dev server
+npm run dev
+# ➜ http://localhost:3000
 
-**[https://vercel.com/raunakshukla9811-8247s-projects/v0-personal-portfolio](https://vercel.com/raunakshukla9811-8247s-projects/v0-personal-portfolio)**
+# 3) Lint
+npm run lint
 
-## Build your app
+# 4) Build & start
+npm run build
+npm start
+```
 
-Continue building your app on:
+## 🔧 Project Structure (key parts)
 
-**[https://v0.dev/chat/projects/UCgk1ZucHqm](https://v0.dev/chat/projects/UCgk1ZucHqm)**
+```
+.
+├─ app/                 # Next.js app router pages/layouts
+├─ components/          # Reusable UI (Hero, About, Project cards, etc.)
+│  ├─ Hero.tsx          # Rotating title + CTA buttons
+│  ├─ About.tsx         # Photo frame + about content
+│  └─ ...               
+├─ public/
+│  ├─ resume.pdf        # Your resume for the 'Download Resume' button
+│  └─ images/
+│     └─ raunak-about.jpeg
+├─ styles/              # Global styles (if any)
+├─ tsconfig.json
+├─ tailwind.config.ts
+└─ package.json
+```
 
-## How It Works
+## 🖼️ Assets
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+- **About photo:** place at `public/images/raunak-about.jpeg`  
+
+- **Resume:** place a PDF at `public/resume.pdf`.  
+
+## ⚙️ Configuration
+
+- **SEO / Metadata:** set in your `app/layout.tsx` (title, description, social preview).
+- **Analytics (optional):** add your provider snippet in `app/layout.tsx`.
+- **Env vars (if you add forms or APIs later):** create `.env.local` and access via `process.env.MY_VAR`.
+
+## 🚢 Deployment
+
+The project is depoloyed via Netlify and is live it https://raunak17.dev
+
+```bash
+# Build locally to verify
+npm run build
+# Then push to GitHub and import the repo in Vercel
+```
+
+## 📦 Scripts
+
+```json
+{
+  "dev": "next dev",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint"
+}
+```
+
+## 🧽 Code Style
+
+- Type-safe with TypeScript
+- ESLint + recommended Next.js rules
+- Tailwind utility-first styling
+
+## 📝 License
+
+Personal portfolio—use as reference or fork with attribution.
