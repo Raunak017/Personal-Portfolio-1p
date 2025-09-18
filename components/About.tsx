@@ -47,7 +47,7 @@ export default function About() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                Hey there! I'm Raunak — a Software & AI Engineer with an MS in Computer Science from NYU. I build products end‑to‑end and ship fast. Recently at Building Diagnostics Robotics, I designed a production ML pipeline for automated curve‑fitting and model evaluation and helped revamp their web stack with modular Next.js components and mobile‑first UX.
+                Hey! I'm Raunak, a Software & AI Engineer with an MS in Computer Science from NYU. I build products end‑to‑end and ship fast. I'm currently working at Building Diagnostics Robotics, where I've designed a production ML pipeline for automated curve‑fitting and model evaluation and developed their with modular Next.js components and mobile‑first UX.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -101,10 +101,10 @@ export default function About() {
                 <motion.div
                   animate={{
                     background: [
-                      "linear-gradient(45deg, rgba(59,130,246,0.1), rgba(147,51,234,0.05))",
-                      "linear-gradient(135deg, rgba(147,51,234,0.05), rgba(59,130,246,0.1))",
-                      "linear-gradient(225deg, rgba(59,130,246,0.1), rgba(147,51,234,0.05))",
-                      "linear-gradient(315deg, rgba(147,51,234,0.05), rgba(59,130,246,0.1))",
+                      "linear-gradient(45deg, rgba(59,130,246,0.5), rgba(147,51,234,0.4))",
+                      "linear-gradient(135deg, rgba(147,51,234,0.4), rgba(59,130,246,0.5))",
+                      "linear-gradient(225deg, rgba(59,130,246,0.5), rgba(147,51,234,0.4))",
+                      "linear-gradient(315deg, rgba(147,51,234,0.4), rgba(59,130,246,0.5))",
                     ],
                   }}
                   transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
@@ -124,7 +124,7 @@ export default function About() {
               {[...Array(8)].map((_, i) => (
                 <motion.div
                   key={i}
-                  className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-60"
+                  className="absolute w-2 h-2 bg-blue-500 rounded-full opacity-100"
                   style={{
                     left: `${20 + i * 45}%`,
                     top: `${20 + i * 10}%`,
@@ -149,7 +149,7 @@ export default function About() {
                   scale: [1, 1.2, 1],
                 }}
                 transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
-                className="absolute -top-2 -left-2 w-6 h-6 border-l-2 border-t-2 border-blue-500/40 z-0"
+                className="absolute -top-2 -left-2 w-6 h-6 border-l-2 border-t-2 border-blue-500/90 z-0"
               />
               <motion.div
                 animate={{
@@ -157,7 +157,7 @@ export default function About() {
                   scale: [1.2, 1, 1.2],
                 }}
                 transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
-                className="absolute -bottom-2 -right-2 w-6 h-6 border-r-2 border-b-2 border-purple-500/40 z-0"
+                className="absolute -bottom-2 -right-2 w-6 h-6 border-r-2 border-b-2 border-purple-500/90 z-0"
               />
             </div>
           </motion.div>

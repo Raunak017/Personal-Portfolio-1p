@@ -11,15 +11,18 @@ const education = [
     school: "New York University - Tandon School of Engineering",
     location: "Brooklyn, NY",
     period: "2023 - 2025",
-    gpa: "3.7/4.0",
+    gpa: "3.73/4.0",
     coursework: [
       "Algorithms",
       "Software Engineering",
       "Big Data",
+      "Machine Learning",
+      "Data Science",
       "Java",
       "Blockchain",
       "Data Visualization",
       "Network Security",
+      "Info Security & Privacy"
     ],
   },
   {
@@ -32,6 +35,7 @@ const education = [
       "Data Structures",
       "Operating Systems",
       "Database Systems",
+      "Artificial Intelligence",
       "Cloud Microservices",
       "Object Oriented Programming",
     ],
@@ -67,7 +71,7 @@ export default function Education() {
             >
               <div className="card-enhanced h-full">
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex-shrink-0">
+                  <div className="p-3 accent-gradient rounded-lg flex-shrink-0">
                     <GraduationCap className="w-6 h-6 text-white" />
                   </div>
                   <div className="flex-1">

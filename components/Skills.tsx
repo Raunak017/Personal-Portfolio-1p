@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
-import { Code, Database, Cloud, Brain, Smartphone, Globe } from "lucide-react"
+import { Code, Database, Cloud, Brain, Globe } from "lucide-react"
 
 const skillCategories = [
   {
@@ -27,31 +27,46 @@ const skillCategories = [
     skills: ["AWS", "GCP", "Docker", "Kubernetes", "CI/CD", "Firebase", "Supabase", "Vercel"],
   },
   {
-    title: "Mobile Development",
-    icon: Smartphone,
-    skills: ["React Native", "iOS Development", "Android Development", "Cross-platform"],
+    title: "AI",
+    icon: Brain,
+    skills: ["LLMs", "RAG", "AI Agents", "MCP", "n8n", "GenAI", "OpenAI API"],
   },
   {
-    title: "Machine Learning & AI",
+    title: "ML & Data Science",
     icon: Brain,
-    skills: ["PyTorch", "TensorFlow", "Scikit-learn", "OpenAI API", "Neural Networks", "Deep Learning"],
+    skills: [
+      "Data Processing",
+      "PyTorch",
+      "TensorFlow",
+      "Scikit-learn",
+      "Fine-tuning",
+      "Recommender Systems",
+      "PySpark",
+      "Airbyte",
+      "Snowflake",
+    ],
   },
 ]
 
 const tools = [
   "Git",
   "GitHub",
-  "Postman",
+  "Gitlab",
   "Docker",
   "VS Code",
-  "Figma",
-  "Jira",
-  "Slack",
-  "Google Sheets",
+  "Cursor",
+  "Codex",
+  "XCode",
   "Jupyter",
   "PySpark",
   "Airbyte",
   "Snowflake",
+  "Terraform",
+  "Splunk",
+  "Figma",
+  "Jira",
+  "Slack",
+  "Google Sheets",
 ]
 
 export default function Skills() {
@@ -88,7 +103,7 @@ export default function Skills() {
             >
               <div className="card-enhanced h-full">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex-shrink-0">
+                  <div className="p-3 accent-gradient rounded-lg flex-shrink-0">
                     <category.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
@@ -158,7 +173,7 @@ export default function Skills() {
               "Problem Solving",
               "Team Leadership",
               "Code Review",
-              "Technical Writing",
+              "Collaboration",
               "Attention to Detail",
             ].map((skill, index) => (
               <motion.div

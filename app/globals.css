@@ -17,7 +17,7 @@
   }
 
   .accent-gradient {
-    @apply bg-gradient-to-r from-blue-500 to-purple-600;
+    @apply bg-gradient-to-r from-blue-400 to-blue-600;
   }
 
   .btn-primary {
