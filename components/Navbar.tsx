@@ -18,30 +18,42 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("hero")
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = navItems.map((item) => item.href.slice(1))
-      const scrollPosition = window.scrollY + 100
+    const sections = navItems
+      .map((item) => document.getElementById(item.href.slice(1)))
+      .filter(Boolean) as HTMLElement[]
 
-      for (const section of sections) {
-        const element = document.getElementById(section)
-        if (element) {
-          const { offsetTop, offsetHeight } = element
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section)
-            break
-          }
+    // Use IntersectionObserver so the active link updates reliably near section edges
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Pick the most visible intersecting section
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+
+        if (visible[0]) {
+          setActiveSection(visible[0].target.id)
         }
+      },
+      {
+        root: null,
+        // Top margin accounts for fixed navbar height; bottom margin biases to current section when near the end
+        rootMargin: "-80px 0px -55% 0px",
+        threshold: [0.01, 0.25, 0.5, 0.75, 1],
       }
-    }
+    )
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
+    sections.forEach((el) => observer.observe(el))
+
+    return () => {
+      sections.forEach((el) => observer.unobserve(el))
+      observer.disconnect()
+    }
   }, [])
 
   const scrollToSection = (href: string) => {
     const element = document.getElementById(href.slice(1))
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
     }
     setIsOpen(false)
   }
