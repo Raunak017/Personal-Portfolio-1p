@@ -10,6 +10,48 @@ interface ProjectsProps {
 }
 
 const projects = [
+    {
+    title: "Multi-Agent Marketplace (Facebook Marketplace-style)",
+    description:
+      "Engineered a multi-agent marketplace where autonomous buyer/seller agents search listings, exchange messages, and negotiate prices using LLM-driven decision making, powered by semantic search with OpenAI embeddings for context-aware retrieval.",
+    technologies: ["OpenAI", "FastAPI", "PostgreSQL", "Redis", "React", "Vite"],
+    github: "https://github.com/RushiPardeshi/agent-marketplace",
+    demo: "",
+    featured: true,
+    highlights: [
+      "LLM-driven buyer/seller agents for autonomous search, messaging, and price negotiation",
+      "Real-time copilot chat with WebSockets and persistent session memory for end-to-end negotiation workflows",
+    ],
+    categories: ["AI"],
+  },
+  {
+    title: "TaskPilot: Agentic Workflow Engine",
+    description:
+      "Streamlined a multi-agent orchestration system enabling autonomous agents to plan, execute, and validate tasks with structured reasoning, contextual memory, and task coordination.",
+    technologies: ["LangGraph", "Multi-Agent Systems", "FastAPI", "Redis", "OpenAI"],
+    github: "",
+    demo: "",
+    featured: false,
+    highlights: [
+      "Multi-agent execution pipeline with structured reasoning, memory, and coordinated task validation",
+      "Real-time streaming framework with persistent state, error handling, and recovery for DevOps workflow simulation",
+    ],
+    categories: ["AI"],
+  },
+  {
+    title: "SOP Violation Slack Bot",
+    description:
+      "Built a real-time retrieval-augmented generation (RAG) pipeline to monitor Slack conversations and detect policy violations by retrieving relevant SOP documents and evaluating compliance using LLM reasoning.",
+    technologies: ["RAG", "OpenAI", "Pinecone", "FastAPI", "Slack API", "Notion"],
+    github: "https://github.com/RushiPardeshi/SOP-violation-flagger",
+    demo: "",
+    featured: false,
+    highlights: [
+      "Event-driven AI agent that processes streaming Slack messages with context-aware vector retrieval",
+      "Achieved approximately 90% accuracy in identifying SOP and policy violations across test scenarios",
+    ],
+    categories: ["AI"],
+  },
   {
     title: "Personal Portfolio Website",
     description:
@@ -17,7 +59,7 @@ const projects = [
     technologies: ["Next.js", "React", "Framer Motion", "Tailwind CSS", "TypeScript"],
     github: "https://github.com/Raunak017/Personal-Portfolio-1p",
     demo: "https://raunak17.dev/",
-    featured: true,
+    featured: false,
     highlights: [
       "Scroll-triggered animations with Framer Motion",
       "Mouse-follow spotlight effects on project cards",
