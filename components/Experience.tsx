@@ -7,16 +7,19 @@ import { Briefcase, Calendar, MapPin } from "lucide-react"
 
 const experiences = [
   {
-    title: "Software Engineer",
+    title: "AI Engineer",
     company: "Building Diagnostics Robotics",
     location: "Brooklyn, NY",
     period: "June 2025 - Present",
     type: "Full-time",
     description: [
-      "Developed a ML pipeline for automated curve fitting and model evaluation across CSV datasets using Chebyshev, spline, ridge, and piecewise regression; implemented train/test RMSE analysis to optimize generalization and visualize performance, achieving an average R2 score of 0.98.",
-      "Revamped BDR’s website architecture with modular Next.js components, implemented mobile-first design improvements including dynamic navigation behavior and exit-intent modals, and launched new service verticals and blog-driven content using MDX and static generation strategies, enhancing user engagement and content accessibility.",
+      "Engineered a retrieval-augmented generation (RAG) pipeline using OpenAI embeddings and Pinecone vector database to index and retrieve inspection and thermal analysis data, enabling context-aware inputs for downstream analysis.",
+      "Deployed a dockerized ML pipeline on AWS Fargate to process large-scale thermal and drone telemetry data for anomaly detection and cost modeling, reducing runtime by ~40% through parallelization and resource optimization.",
+      "Designed and implemented an LLM-based report generation pipeline to convert structured inspection and telemetry data into standardized natural language reports, enabling automated and consistent output generation.",
+      "Optimized LLM performance through prompting strategies (few-shot, schema-constrained outputs) and implemented output validation and structured parsing to improve response consistency, reliability, and downstream system integration.",
+      "Architected a cross-platform (Android & iOS) mobile application to capture site data and generate AI-powered inspection reports using the LLM pipeline with real-time data synchronization via GraphQL subscriptions, scalable to 1,000+ users."
     ],
-    technologies: ["Next.js", "React", "Redux", "AWS", "CI/CD", "MDX", "Machine Learning", "Regression Models"],
+    technologies: ["OpenAI", "RAG", "AWS", "React Native", "Pinecone", "Docker", "Fargate", "GraphQL", "LLM Prompting"],
   },
   {
     title: "Software Engineer Intern",
@@ -25,10 +28,10 @@ const experiences = [
     period: "March 2025 - June 2025",
     type: "Internship",
     description: [
-      "Spearheaded a scalable cross-platform app (iOS & Android) using React Native and Flask; designed a serverless backend with AWS Lambda, GraphQL, Cognito, and API Gateway to support 1000+ users.",
-      "Deployed the iOS version of BDR’s mobile app to the App Store; set up a CI/CD pipeline using AWS to streamline release workflows and reduce deployment cycles by 15%.",
+      "Built and launched the company’s website from scratch, implementing server-side rendering, dynamic routing, and optimized content delivery, improving performance and page load times by ~30%.",
+      "Designed a relational database schema to store user accounts and inspection reports, enabling secure, account-specific access through authenticated workflows, and integrated a payment system to support end-to-end transaction flows."
     ],
-    technologies: ["React Native", "Flask", "Next.js", "AWS Lambda", "GraphQL", "Cognito", "API Gateway", "CI/CD", "iOS", "Android"],
+    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Supabase", "Stripe API", "Authentication", "Server-Side Rendering"],
   },
   {
     title: "Bootcamp Admin",
